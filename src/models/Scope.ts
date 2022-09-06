@@ -5,8 +5,10 @@ import { Property } from "@tsed/schema";
 
 @Entity("scope")
 export class Scope extends Model {
+
   @IdColumn()
   id!: number;
+
   @Property()
   name!: string;
 }

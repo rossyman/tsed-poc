@@ -32,6 +32,7 @@ specifiers:
   '@types/cors': ^2.8.12
   '@types/express': ^4.17.13
   '@types/jest': ^28.1.8
+  '@types/jsonwebtoken': ^8.5.9
   '@types/method-override': ^0.0.32
   '@types/multer': ^1.4.7
   '@types/node': ^18.7.13
@@ -96,6 +97,7 @@ dependencies:
   '@tsed/platform-views': 6.129.0_jdieu4fklylmzrpyc7y4tpalei
   '@tsed/schema': 6.129.0_mrcsvqtqxsfnhqiqmnswiw5lra
   '@tsed/swagger': 6.129.0_@tsed+common@6.129.0
+  '@types/jsonwebtoken': 8.5.9
   ajv: 8.11.0
   barrelsby: 2.4.0
   body-parser: 1.20.0
@@ -1483,7 +1485,6 @@ packages:
     resolution: {integrity: sha512-272FMnFGzAVMGtu9tkr29hRL6bZj4Zs1KZNeHLnKqAvp06tAIcarTMwOh8/8bz4FmKRcMxZhZNeUAQsNLoiPhg==}
     dependencies:
       '@types/node': 18.7.15
-    dev: true
 
   /@types/method-override/0.0.32:
     resolution: {integrity: sha512-Vf9AohOlANmhNswCbkdRG3p+tYcq1+63O+ex1UoNIVYWW3tO8Mx6Z+5G1R8DENeC6/t1SiDJS+ph6ACKpryokg==}

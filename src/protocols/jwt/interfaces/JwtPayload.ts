@@ -1,6 +1,4 @@
 export interface JwtPayload {
-  id: number;
-  scopes: string[];
+  sub: number;
   version: string;
-  registeredAt: string;
 }

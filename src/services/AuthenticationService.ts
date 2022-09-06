@@ -4,7 +4,6 @@ import { SignOptions, sign } from "jsonwebtoken";
 import { Authentication } from "../models/Authentication";
 import { JwtPayload } from "../protocols/jwt/interfaces/JwtPayload";
 import { SettingService } from "./SettingService";
-import { User } from "../models/User";
 
 @Service()
 export class AuthenticationService {
@@ -23,15 +22,13 @@ export class AuthenticationService {
   }
 
   async createToken(id: number): Promise<string> {
-    const user = await User.query().findById(id).withGraphFetched("scopes");
-    if (!user) {
+    const principal = await Authentication.query().findById(id).withGraphFetched("scopes");
+    if (!principal) {
       return Promise.reject();
     }
     const {TOKEN_VERSION} = await this.settingService.getSettings();
     const payload: JwtPayload = {
-      id,
-      scopes: user.scopes.map((scope) => scope.name),
-      registeredAt: user.registeredAt,
+      sub: id,
       version: TOKEN_VERSION
     };
     return sign(payload, this.SECRET_KEY, this.JWT_OPTIONS);
